@@ -1,11 +1,11 @@
 ## Goal
-What does this PR accomplish?
+<!-- Brief description of what this PR accomplishes -->
 
 ## Changes
-What was modified?
+<!-- List or describe key modifications -->
 
 ## Testing
-How was it verified?
+<!-- How this was verified (e.g., unit tests, manual testing steps) -->
 
 ## Checklist
 - [ ] Clear, descriptive PR title
