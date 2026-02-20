@@ -16,4 +16,33 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Gather system information
+        run: |
+          echo "📊 System Information:"
+          echo "======================"
+          echo "🏠 Hostname: $(hostname)"
+          echo "💻 Kernel: $(uname -a)"
+          echo "🖥️ OS Information:"
+          cat /etc/os-release
+          echo ""
+          echo "🔧 CPU Information:"
+          echo "=================="
+          lscpu | grep "Model name" | head -1
+          echo "CPU Cores: $(nproc)"
+          echo ""
+          echo "💾 Memory Information:"
+          echo "====================="
+          free -h
+          echo ""
+          echo "💿 Disk Information:"
+          echo "==================="
+          df -h
+          echo ""
+          echo "🌐 Network Information:"
+          echo "======================"
+          ip addr show | grep -E "inet |inet6" | head -5
+          echo ""
+          echo "📦 Installed Packages (first 10):"
+          echo "================================"
+          dpkg -l | head -15
       - run: echo "🍏 This job's status is ${{ job.status }}."
